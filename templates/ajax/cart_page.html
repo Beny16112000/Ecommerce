@@ -1,0 +1,30 @@
+<!doctype html>
+                <tbody>
+                  {% for p,item in product.items() %}
+                  <tr>
+                    <td>
+                      <div class="media">
+                        <div class="d-flex">
+                          <img src="static/assets/img/gallery/card1.png" alt="" />
+                        </div>
+                        <div class="media-body">
+                          <a href="/shop/{{item.title}}"><p>{{ item.title }}</p></a>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <h5>${{ item.price }}</h5>
+                    </td>
+                    <div class="product_count">
+                    <td>
+                        <input class="product-qty-{{p}}" type="number" value="{{item.qty}}" style="vertical-align: bottom;">
+                        <button class="btn btn-sm btn-primary update-item" data-item="{{p}}"><i class="fa fa-sync"></i></button>
+                        <button class="update-item" data-item="{{p}}" >Update Cart</button>
+                    </td>
+                    </div>
+                    <td>
+                      <h5>{{ total_final_price }}</h5>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                    
