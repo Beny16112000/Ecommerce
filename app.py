@@ -89,6 +89,7 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
         user = username_check(username)
+        print(user)
         if user != False:
             login_user(user)
             return redirect('/')
@@ -321,6 +322,7 @@ def payment_done():
     After Payment Page
     """
     if request.method == 'POST':
+        print('hello')
         order = after_payment_order()
         return render_template('payment_done.html')
     else:
