@@ -110,9 +110,14 @@
                                     <div class="popular-img">
                                         <img src="static/assets/img/gallery/popular1.png" alt="">
                                         <div class="img-cap">
-                                            <span>Add to cart</span>
+                                            <span style="color: red;" class="product-price-{{p[0]}} product-price">{{p[3]}}</span>
+                                            <input style="display: none;" class="product_count_item input-number product-qty-{{p[0]}}" type="number" value="1">
+                                            <input type="hidden" class="product-id-{{p[0]}}" value="{{p[0]}}">
+                                            <input type="hidden" class="product-title-{{p[0]}}" value="{{p[1]}}">
+                                            <span><button class="add-to-cart1" data-index="{{ p[0] }}" type="submit">Add to cart</button></span>
                                         </div>
                                         <div class="favorit-items">
+
                                         </div>
                                     </div>
                                     <div class="popular-caption">
@@ -165,8 +170,8 @@
     <div class="search-model-box">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-btn">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Searching key.....">
+            <form class="search-model-form" method="get" action="/search">
+                <input type="text" name="q" id="search-input" placeholder="Searching key.....">
             </form>
         </div>
     </div>

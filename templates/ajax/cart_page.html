@@ -1,4 +1,59 @@
 <!doctype html>
+<main id="cart_page">
+<html lang="zxx">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Watch shop | eCommers</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="shortcut icon" type="image/x-icon" href="static/assets/img/favicon.ico">
+
+  <!-- CSS here -->
+      <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+      <link rel="stylesheet" href="static/assets/css/owl.carousel.min.css">
+      <link rel="stylesheet" href="static/assets/css/flaticon.css">
+      <link rel="stylesheet" href="static/assets/css/slicknav.css">
+      <link rel="stylesheet" href="static/assets/css/animate.min.css">
+      <link rel="stylesheet" href="static/assets/css/magnific-popup.css">
+      <link rel="stylesheet" href="static/assets/css/fontawesome-all.min.css">
+      <link rel="stylesheet" href="static/assets/css/themify-icons.css">
+      <link rel="stylesheet" href="static/assets/css/slick.css">
+      <link rel="stylesheet" href="static/assets/css/nice-select.css">
+      <link rel="stylesheet" href="static/assets/css/style.css">
+</head>
+
+<body>
+{% include 'base.html' %}
+      <!-- Hero Area Start-->
+      <div class="slider-area ">
+          <div class="single-slider slider-height2 d-flex align-items-center">
+              <div class="container">
+                  <div class="row">
+                      <div class="col-xl-12">
+                          <div class="hero-cap text-center">
+                              <h2>Cart List</h2>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--================Cart Area =================-->
+      <section class="cart_area section_padding">
+        <div class="container">
+          <div class="cart_inner">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Total</th>
+                  </tr>
+                </thead>
                 <tbody>
                   {% for p,item in product.items() %}
                   <tr>
@@ -19,7 +74,7 @@
                     <td>
                         <input class="product-qty-{{p}}" type="number" value="{{item.qty}}" style="vertical-align: bottom;">
                         <button class="btn btn-sm btn-primary update-item" data-item="{{p}}"><i class="fa fa-sync"></i></button>
-                        <button class="update-item" data-item="{{p}}" >Update Cart</button>
+                        <button class="btn btn-sm btn-danger delete-item" data-item="{{p}}"><i class="fa fa-trash"></i></button>
                     </td>
                     </div>
                     <td>
@@ -27,4 +82,82 @@
                     </td>
                   </tr>
                   {% endfor %}
-                    
+                    <td></td>
+                    <td></td>
+                    <td>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="checkout_btn_inner float-right">
+                <a class="btn_1" href="/shop">Continue Shopping</a>
+                <a class="btn_1 checkout_btn_1" href="checkout">Proceed to checkout</a>
+              </div>
+            </div>
+          </div>
+      </section>
+      <!--================End Cart Area =================-->
+  </main>>
+  {% include 'footer.html' %}
+  <!--? Search model Begin -->
+  <div class="search-model-box">
+      <div class="h-100 d-flex align-items-center justify-content-center">
+          <div class="search-close-btn">+</div>
+          <form class="search-model-form" method="get" action="/search">
+            <input type="text" name="q" id="search-input" placeholder="Searching key.....">
+        </form>
+      </div>
+  </div>
+  <!-- Search model end -->
+
+  <!-- JS here -->
+
+  <script src="./static/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+  <!-- Jquery, Popper, Bootstrap -->
+  <script src="./static/assets/js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="./static/assets/js/popper.min.js"></script>
+  <script src="./static/assets/js/bootstrap.min.js"></script>
+  <!-- Jquery Mobile Menu -->
+  <script src="./static/assets/js/jquery.slicknav.min.js"></script>
+
+  <!-- Jquery Slick , Owl-Carousel Plugins -->
+  <script src="./static/assets/js/owl.carousel.min.js"></script>
+  <script src="./static/assets/js/slick.min.js"></script>
+
+  <!-- One Page, Animated-HeadLin -->
+  <script src="./static/assets/js/wow.min.js"></script>
+  <script src="./static/assets/js/animated.headline.js"></script>
+  
+  <!-- Scrollup, nice-select, sticky -->
+  <script src="./static/assets/js/jquery.scrollUp.min.js"></script>
+  <script src="./static/assets/js/jquery.nice-select.min.js"></script>
+  <script src="./static/assets/js/jquery.sticky.js"></script>
+  <script src="./static/assets/js/jquery.magnific-popup.js"></script>
+
+  <!-- contact js -->
+  <script src="./static/assets/js/contact.js"></script>
+  <script src="./static/assets/js/jquery.form.js"></script>
+  <script src="./static/assets/js/jquery.validate.min.js"></script>
+  <script src="./static/assets/js/mail-script.js"></script>
+  <script src="./static/assets/js/jquery.ajaxchimp.min.js"></script>
+  
+  <!-- Jquery Plugins, main Jquery -->	
+  <script src="./static/assets/js/plugins.js"></script>
+  <script src="./static/assets/js/main.js"></script>
+  <script src="/static/custom.js"></script>
+  <script src="/static/custom.js"></script>
+  <script>
+      $('#zoom_01').ezPlus();
+  </script>
+
+</body>
+</html>
+</main>
+                
+
+
+
